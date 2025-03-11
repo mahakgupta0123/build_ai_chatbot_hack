@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            background: url('/frontend/assests/background.png.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgb(143, 11, 11);
+            font-family: "Josefin Sans", sans-serif;
+            text-align: center;
+        }
+        .logo {
+            max-width: 120px;
+            height: auto;
+            margin-right: 15px;
+            position: absolute;
+            left: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            max-width: 70%;
+        }
+        .question-heading {
+            margin-top: 60px; /* Spacing below h1 */
+            font-size: 36px; /* Adjust size if needed */
+            text-decoration: underline;
+            font-family: "Josefin Sans", sans-serif; /* Same font */
+            color: rgb(143, 11, 11); /* Same text color */
+            text-align: center; /* Centered */
+        }
+        .features-heading {
+            margin-top: 30px; /* Spacing below 'Why Choose MuseoMate?' */
+            font-size: 36px; /* Same size */
+            text-decoration: underline;
+            font-family: "Josefin Sans", sans-serif; /* Same font */
+            color: rgb(143, 11, 11); /* Same color */
+            text-align: center; /* Centered */
+        }
+        
+        .features-list {
+            margin-top: 20px; /* Space below heading */
+            font-size: 20px;
+            font-family: "Josefin Sans", sans-serif;
+            color: rgb(143, 11, 11);
+            text-align: center;
+            list-style: none; /* Removes default bullets */
+            padding: 0;
+        }
+        .start-chat-btn {
+            margin-top: 50px; /* Space below features */
+            padding: 10px 20px;
+            font-size: 18px; /* Slightly smaller text */
+            font-family: "Josefin Sans", sans-serif; /* Same font */
+            font-weight: 600; /* Same weight */
+            color: white; /* White text */
+            background-color: rgb(143, 11, 11); /* Same as h2 color */
+            border: none;
+            border-radius: 5px; /* Slightly rounded edges */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .start-chat-btn:hover {
+            background-color: rgb(100, 8, 8); /* Darker shade on hover */
+        }
+           
+    </style>
+</head>
+<body>
+    <img src="/frontend/assests/logo.png.jpg" alt="MuseoMate Logo" class="logo">
+    <h1>Welcome to MuseoMate Your Smart AI Companion for Effortless Museum Visits, Ticket Booking, and Guided Tours!</h1>
+    <h2 class="question-heading">Why Choose MuseoMate?</h2>
+    <h2 class="features-heading">Features We Offer</h2>
+<ul class="features-list">
+    <li>✔ Easy Ticket Booking – Choose date, time & type</li>
+    <li>✔ Museum Timings & Availability</li>
+    <li>✔ 3D Viewing & Location Check</li>
+    <li>✔ Previous Bookings Access</li>
+    <li>✔ Smart Recommendations</li>
+    <li>✔ Guided Tours & Verification</li>
+    <li>✔ Interactive Experience – Insights, Fun Facts & Quizzes</li>
+</ul>
+<button class="start-chat-btn" onclick="window.location.href='login.html'">Start Chat</button>
+
+</body>
+</html>

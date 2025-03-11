@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            background: url('/frontend/assests/background.png.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgb(143, 11, 11);
+            font-family: "Josefin Sans", sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            width: 120px;
+        }
+        .heading {
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+        .feedback-container {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .rating {
+            margin-bottom: 20px;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+        }
+        .stars input[type="radio"] {
+            display: none;
+        }
+        .stars label {
+            font-size: 30px;
+            cursor: pointer;
+            color: #ddd;
+        }
+        .stars input[type="radio"]:checked ~ label {
+            color: rgb(143, 11, 11);
+        }
+        .comments {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .comments textarea {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: "Josefin Sans", sans-serif;
+            background: #f9f9f9;
+        }
+        .submit-btn {
+            padding: 14px 20px;
+            font-size: 18px;
+            background-color: rgb(143, 11, 11);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: "Josefin Sans", sans-serif;
+        }
+        .submit-btn:hover {
+            background-color: rgb(100, 8, 8);
+        }
+        .back-btn {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid rgb(143, 11, 11);
+            color: rgb(143, 11, 11);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: "Josefin Sans", sans-serif;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: rgb(143, 11, 11);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="/frontend/assests/logo.png.jpg" alt="Logo" class="logo">
+    <h1 class="heading">Feedback</h1>
+
+    <div class="feedback-container">
+        <div class="rating">
+            <label for="rating">Rate Your Experience:</label>
+            <div class="stars">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">☆</label>
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">☆</label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">☆</label>
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">☆</label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">☆</label>
+            </div>
+        </div>
+
+        <div class="comments">
+            <textarea id="comments" placeholder="Your feedback..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="submitFeedback()">Submit</button>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='/files/homepage.html'">Back to Home</button>
+
+    <script>
+        function submitFeedback() {
+            let rating = document.querySelector('input[name="rating"]:checked');
+            let comments = document.getElementById("comments").value.trim();
+            if (!rating || !comments) {
+                alert("Please provide a rating and comments.");
+                return;
+            }
+
+            // Handle the feedback submission logic here
+            console.log("Feedback submitted: ", rating.value, comments);
+            alert("Thank you for your feedback!");
+        }
+    </script>
+</body>
+</html>
